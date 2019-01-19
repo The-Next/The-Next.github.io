@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-19T13:10:31.680Z</updated>
+  <updated>2019-01-19T15:07:10.704Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://yoursite.com/2019/01/19/SpringBoot-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2019/01/19/SpringBoot-快速搭建/</id>
     <published>2019-01-19T05:40:18.000Z</published>
-    <updated>2019-01-19T13:10:31.680Z</updated>
+    <updated>2019-01-19T15:07:10.704Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;SpringBoot—【快速搭建】&quot;&gt;&lt;a href=&quot;#SpringBoot—【快速搭建】&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot—【快速搭建】&quot;&gt;&lt;/a&gt;SpringBoot—【快速搭建】&lt;/h1&gt;&lt;h3 id=&quot;1-SpringBoot简述&quot;&gt;&lt;a href=&quot;#1-SpringBoot简述&quot; class=&quot;headerlink&quot; title=&quot;1.SpringBoot简述&quot;&gt;&lt;/a&gt;1.SpringBoot简述&lt;/h3&gt;&lt;blockquote&gt;
+      &lt;h1 id=&quot;SpringBoot-快速搭建&quot;&gt;&lt;a href=&quot;#SpringBoot-快速搭建&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot-快速搭建&quot;&gt;&lt;/a&gt;SpringBoot-快速搭建&lt;/h1&gt;&lt;h3 id=&quot;1-SpringBoot简述&quot;&gt;&lt;a href=&quot;#1-SpringBoot简述&quot; class=&quot;headerlink&quot; title=&quot;1.SpringBoot简述&quot;&gt;&lt;/a&gt;1.SpringBoot简述&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Spring Boot makes it easy to create stand-alone production-grade Spring based Applications that you can “just run”.&lt;br&gt;We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;摘自官网,大致意思是创建独立的、快速的、生产级的基于Spring的应用，对Spring和第三方库进行整合，轻松上手，只需要很少的配置就可以使用。&lt;/p&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;摘自官网,大致意思是创建独立的、快速的、生产级的基于Spring的应用，对Spring和第三方库进行整合，轻松上手，只需要很少的配置就可以使用。&lt;/p&gt;
     
     </summary>
     
