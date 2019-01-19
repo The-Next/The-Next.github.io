@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>程佩的博客</title>
+  
+  <subtitle>没有银弹</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-01-19T11:08:11.578Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>程佩</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot----快速搭建</title>
+    <link href="http://yoursite.com/2019/01/19/SpringBoot-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2019/01/19/SpringBoot-快速搭建/</id>
+    <published>2019-01-19T05:40:18.000Z</published>
+    <updated>2019-01-19T11:08:11.578Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;SpringBoot—【快速搭建】&quot;&gt;&lt;a href=&quot;#SpringBoot—【快速搭建】&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot—【快速搭建】&quot;&gt;&lt;/a&gt;SpringBoot—【快速搭建】&lt;/h1&gt;&lt;h3 id=&quot;1-SpringBoot简述&quot;&gt;&lt;a href=&quot;#1-SpringBoot简述&quot; class=&quot;headerlink&quot; title=&quot;1.SpringBoot简述&quot;&gt;&lt;/a&gt;1.SpringBoot简述&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Spring Boot makes it easy to create stand-alone production-grade Spring based Applications that you can “just run”.&lt;br&gt;We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;摘自官网,大致意思是创建独立的、快速的、生产级的基于Spring的应用，对Spring和第三方库进行整合，轻松上手，只需要很少的配置就可以使用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/01/17/hello-world/"/>
+    <id>http://yoursite.com/2019/01/17/hello-world/</id>
+    <published>2019-01-17T12:18:30.393Z</published>
+    <updated>2019-01-17T12:18:30.393Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
