@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-21T07:07:06.929Z</updated>
+  <updated>2019-01-22T07:50:00.257Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot-使用QueryDSL查询框架</title>
+    <link href="http://yoursite.com/2019/01/22/SpringBoot-%E4%BD%BF%E7%94%A8QueryDSL%E6%9F%A5%E8%AF%A2%E6%A1%86%E6%9E%B6/"/>
+    <id>http://yoursite.com/2019/01/22/SpringBoot-使用QueryDSL查询框架/</id>
+    <published>2019-01-22T05:38:06.000Z</published>
+    <updated>2019-01-22T07:50:00.257Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;SpringBoot-使用QueryDSL查询框架-基础&quot;&gt;&lt;a href=&quot;#SpringBoot-使用QueryDSL查询框架-基础&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot-使用QueryDSL查询框架(基础)&quot;&gt;&lt;/a&gt;SpringBoot-使用QueryDSL查询框架(基础)&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;QueryDSL是一个通用的查询框架，框架的核心原则是创建安全类型的查询，开始QueryDSL仅支持Hibernate（HQL），在不断开源人士加入QueryDSL团队后，陆续发布了针对JPA，JDO，JDBC，Lucene，Hibernate Search，MangoDB，Collections 和RDF(Relational Data Format) Bean等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h3&gt;&lt;p&gt;&amp;emsp;&amp;emsp;在使用SpringDataJPA的时候，内置的QueryByExampleExecutor对复杂查询来说显然不怎么好用，于是在这里引入一个便于我们进行复杂查询的框架————QueryDSL。这个框架可以完美的和SpringDataJPA进行融合，接下来主要说怎么用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://yoursite.com/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
+    
+      <category term="SpringDataJPA" scheme="http://yoursite.com/tags/SpringDataJPA/"/>
+    
+      <category term="QueryDSL" scheme="http://yoursite.com/tags/QueryDSL/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot----整合SpringDataJPA</title>
