@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-01T03:53:31.633Z</updated>
+  <updated>2019-02-03T06:17:59.947Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基本数据结构</title>
+    <link href="http://yoursite.com/2019/02/02/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>http://yoursite.com/2019/02/02/基本数据结构/</id>
+    <published>2019-02-02T02:35:35.000Z</published>
+    <updated>2019-02-03T06:17:59.947Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本数据结构&quot;&gt;&lt;a href=&quot;#基本数据结构&quot; class=&quot;headerlink&quot; title=&quot;基本数据结构&quot;&gt;&lt;/a&gt;基本数据结构&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;虽然以前都学过也都用过，但是并没有具体总结过，这里权当是复习了，使用C++的面对对象方法重新实现一下这几个数据结构。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>递归分治</title>
+    <link href="http://yoursite.com/2019/02/01/%E9%80%92%E5%BD%92%E5%88%86%E6%B2%BB/"/>
+    <id>http://yoursite.com/2019/02/01/递归分治/</id>
+    <published>2019-02-01T04:04:06.000Z</published>
+    <updated>2019-02-02T02:33:38.868Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;递归分治&quot;&gt;&lt;a href=&quot;#递归分治&quot; class=&quot;headerlink&quot; title=&quot;递归分治&quot;&gt;&lt;/a&gt;递归分治&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;在之前的归并排序中，使用了递归分治的方法，整个算法经历了三个过程。&lt;br&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;分解&lt;/strong&gt;：将原问题划分为一个个子问题，子问题与原问题形式一样，只是规模更小。&lt;br&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;求解&lt;/strong&gt;：递归的求出子问题。如果子问题规模足够小，停止递归，直接求解。&lt;br&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;合并&lt;/strong&gt;：将子问题的解组合成原问题的解。&lt;br&gt;&amp;emsp;&amp;emsp;当问题足够大时，需要递归求解，这就叫做&lt;strong&gt;递归情况&lt;/strong&gt;，当问题已经分解到足够小时并且不用再递归时，递归已经“触底”，进入&lt;strong&gt;基本情况&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>渐进记号</title>
@@ -32,9 +72,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -55,9 +95,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
