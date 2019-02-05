@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-03T06:20:03.190Z</updated>
+  <updated>2019-02-05T14:56:17.318Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mongodb安装</title>
+    <link href="http://yoursite.com/2019/02/05/mongodb%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2019/02/05/mongodb安装/</id>
+    <published>2019-02-05T12:45:35.000Z</published>
+    <updated>2019-02-05T14:56:17.318Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;mongodb安装&quot;&gt;&lt;a href=&quot;#mongodb安装&quot; class=&quot;headerlink&quot; title=&quot;mongodb安装&quot;&gt;&lt;/a&gt;mongodb安装&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;大年初一无聊，玩玩mongodb。&lt;/p&gt;
+&lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt;&amp;emsp;&amp;emsp;再知乎上经常听到大名鼎鼎的nosql类型数据库，相对于关系型数据库来说，这个东西部署很简单，储存方式为虚拟内存+持久化存储，总结起来一个字————快。nosql存起来是&lt;code&gt;key-value&lt;/code&gt;形式的，也支持集合和对象但是并不支持事务，也不能连表查询。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="nosql" scheme="http://yoursite.com/tags/nosql/"/>
+    
+      <category term="mongodb" scheme="http://yoursite.com/tags/mongodb/"/>
+    
+  </entry>
   
   <entry>
     <title>基本数据结构</title>
