@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-05T14:56:17.318Z</updated>
+  <updated>2019-03-08T12:04:09.587Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Django-rest-framework开发总结-项目搭建</title>
+    <link href="http://yoursite.com/2019/02/28/Django-rest-framework%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93-%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2019/02/28/Django-rest-framework开发总结-项目搭建/</id>
+    <published>2019-02-28T12:08:48.000Z</published>
+    <updated>2019-03-08T12:04:09.587Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Django-rest-framework开发总结-项目搭建&quot;&gt;&lt;a href=&quot;#Django-rest-framework开发总结-项目搭建&quot; class=&quot;headerlink&quot; title=&quot;Django-rest-framework开发总结-项目搭建&quot;&gt;&lt;/a&gt;Django-rest-framework开发总结-项目搭建&lt;/h1&gt;&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;我第一次开发web应用用的就是Django，甚至比最熟悉的Java还早，目前开发了两个应用，一个报名系统，一个考试系统，不敢说对这个框架很熟悉吧，但是也是有一些了解的，毕竟踩过不少坑，一个bug改三天的事也经常干，但是自从开了博客以来却没有总结过任何关于Django的文章，借着这次开发的机会总结一下，就当是做笔记了。这一回开发的并不是普通的Django应用，而是仅仅提供rest风格数据接口的服务接口的应用，这一过程中除了后台展示界面以外，我并没有参加关于任何前端的开发，目前来讲这也是一种国际上的主流用法，也是前后端分离的大趋势，有利于微服务的构建。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>哈希表</title>
+    <link href="http://yoursite.com/2019/02/18/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    <id>http://yoursite.com/2019/02/18/哈希表/</id>
+    <published>2019-02-18T06:26:30.000Z</published>
+    <updated>2019-03-08T12:03:41.005Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;哈希表&quot;&gt;&lt;a href=&quot;#哈希表&quot; class=&quot;headerlink&quot; title=&quot;哈希表&quot;&gt;&lt;/a&gt;哈希表&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;在学习Java和Python的时候经常使用的一种数据结构，像HashMap和字典都是封装好的哈希表，特点是他是一种动态储存结构，储存格式为&lt;code&gt;key-value&lt;/code&gt;形式，支持&lt;code&gt;INSERT&lt;/code&gt;、&lt;code&gt;SEARCH&lt;/code&gt;、&lt;code&gt;DELETE&lt;/code&gt;、&lt;code&gt;UPDATE&lt;/code&gt;等一系列操作，他们的底层都是由各个程序语言的编译器维护出来了一个符号表，其中每个元素的&lt;code&gt;key&lt;/code&gt;为任意字符串，与不同语言中现哈希表的实现的&lt;code&gt;key&lt;/code&gt;对应。虽然看起来没什么，但是哈希表是实现字典操作的一个非常有效的数据结构，最坏情况下的搜索时间也与链表相同，也就是说他的最坏运行时间是O(n)，然而实际上在合理假设的情况下，哈希表的查找时间甚至达到了O(1)。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mongodb安装</title>
     <link href="http://yoursite.com/2019/02/05/mongodb%E5%AE%89%E8%A3%85/"/>
     <id>http://yoursite.com/2019/02/05/mongodb安装/</id>
     <published>2019-02-05T12:45:35.000Z</published>
-    <updated>2019-02-05T14:56:17.318Z</updated>
+    <updated>2019-02-07T05:32:14.355Z</updated>
     
     <summary type="html">
     
@@ -95,9 +131,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -118,9 +154,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   

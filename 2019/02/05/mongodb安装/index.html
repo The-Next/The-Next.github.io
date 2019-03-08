@@ -90,7 +90,7 @@
 <meta property="og:description" content="mongodb安装&amp;emsp;&amp;emsp;大年初一无聊，玩玩mongodb。 写在前面&amp;emsp;&amp;emsp;再知乎上经常听到大名鼎鼎的nosql类型数据库，相对于关系型数据库来说，这个东西部署很简单，储存方式为虚拟内存+持久化存储，总结起来一个字————快。nosql存起来是key-value形式的，也支持集合和对象但是并不支持事务，也不能连表查询。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/02/05/mongodb安装/810DE75B29EB3BE380628AD1A7030BF4.jpg">
-<meta property="og:updated_time" content="2019-02-05T14:56:17.318Z">
+<meta property="og:updated_time" content="2019-02-07T05:32:14.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb安装">
 <meta name="twitter:description" content="mongodb安装&amp;emsp;&amp;emsp;大年初一无聊，玩玩mongodb。 写在前面&amp;emsp;&amp;emsp;再知乎上经常听到大名鼎鼎的nosql类型数据库，相对于关系型数据库来说，这个东西部署很简单，储存方式为虚拟内存+持久化存储，总结起来一个字————快。nosql存起来是key-value形式的，也支持集合和对象但是并不支持事务，也不能连表查询。">
@@ -439,7 +439,10 @@
 <blockquote>
 <p>server should be down…<br>2019-02-05T22:50:38.485+0800 I NETWORK  [js] trying reconnect to 127.0.0.1:27017 failed<br>2019-02-05T22:50:38.487+0800 I NETWORK  [js] reconnect 127.0.0.1:27017 failed failed </p>
 </blockquote>
-<p>这就已经关闭了，同时也可以看见运行mongodb的那个命令行进程也关闭了。</p>
+<p>这就已经关闭了，同时也可以看见运行mongodb的那个命令行进程也关闭了。<br>&emsp;&emsp;还有要运行下面这一段命令，添加执行命令权限，不然什么都干不了。</p>
+<blockquote>
+<p>db.grantRolesToUser ( “admin”, [ { role: “__system”, db: “admin” } ] )</p>
+</blockquote>
 <p>&emsp;&emsp;具体怎么用再说吧，等后面学习总结。</p>
 
       
@@ -482,6 +485,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/18/哈希表/" rel="prev" title="哈希表">
+                哈希表 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -560,7 +567,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
