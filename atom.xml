@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-08T12:04:09.587Z</updated>
+  <updated>2019-04-29T13:54:19.855Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Docker部署静态网页</title>
+    <link href="http://yoursite.com/2019/04/28/%E4%BD%BF%E7%94%A8docker%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/"/>
+    <id>http://yoursite.com/2019/04/28/使用docker部署静态网页/</id>
+    <published>2019-04-28T07:50:46.000Z</published>
+    <updated>2019-04-29T13:54:19.855Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;使用docker部署静态网页&quot;&gt;&lt;a href=&quot;#使用docker部署静态网页&quot; class=&quot;headerlink&quot; title=&quot;使用docker部署静态网页&quot;&gt;&lt;/a&gt;使用docker部署静态网页&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;Docker是一个使用Go语言开发的容器引擎，可以将应用以及依赖环境打包进容器中，容器是可以移植到任何操作系统上(一般是Linux)，容器与容器之间是完全隔离的，容器之间不会有任何接口。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Django-rest-framework开发总结-项目搭建</title>
@@ -214,7 +230,7 @@
     <link href="http://yoursite.com/2019/01/19/SpringBoot-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2019/01/19/SpringBoot-快速搭建/</id>
     <published>2019-01-19T05:40:18.000Z</published>
-    <updated>2019-01-24T10:21:39.416Z</updated>
+    <updated>2019-05-21T00:54:35.248Z</updated>
     
     <summary type="html">
     
