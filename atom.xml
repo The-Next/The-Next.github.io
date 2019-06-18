@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-29T13:54:19.855Z</updated>
+  <updated>2019-06-18T14:16:12.649Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>禹州实训-宠物医院-前端</title>
+    <link href="http://yoursite.com/2019/06/08/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD-%E5%AE%A0%E7%89%A9%E5%8C%BB%E9%99%A2-%E5%89%8D%E7%AB%AF/"/>
+    <id>http://yoursite.com/2019/06/08/禹州实训-宠物医院-前端/</id>
+    <published>2019-06-08T04:42:38.000Z</published>
+    <updated>2019-06-18T14:16:12.649Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;禹州实训-宠物医院-前端&quot;&gt;&lt;a href=&quot;#禹州实训-宠物医院-前端&quot; class=&quot;headerlink&quot; title=&quot;禹州实训-宠物医院(前端)&quot;&gt;&lt;/a&gt;禹州实训-宠物医院(前端)&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;讲真，我对前端还是比较抵触的，因为我觉得这事是需要专业的人来做的(我们一点都不专业，前端课都是水课)。用户体验，界面设计，效果啥的，本来我就没审美……还想让我咋地！再说了，前端开发，目的是将用户体验提高到100分，但是这玩意给我的开发体验简直就是0分，没法让我感到”写得爽“。直到有一天我遇见了&lt;code&gt;Angular&lt;/code&gt;，我靠前端还能这么开发？Service?依赖注入？MVC？这不是&lt;code&gt;spring&lt;/code&gt;吗？还有typescript什么鬼，比原来那个辣鸡js好用多了，一看还是巨硬出得，巨硬终于干点人事了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>禹州实训-宠物医院-后端</title>
+    <link href="http://yoursite.com/2019/05/22/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD-%E5%AE%A0%E7%89%A9%E5%8C%BB%E9%99%A2-%E5%90%8E%E7%AB%AF/"/>
+    <id>http://yoursite.com/2019/05/22/禹州实训-宠物医院-后端/</id>
+    <published>2019-05-22T08:06:34.000Z</published>
+    <updated>2019-06-18T14:14:48.153Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;禹州实训-宠物医院-后端&quot;&gt;&lt;a href=&quot;#禹州实训-宠物医院-后端&quot; class=&quot;headerlink&quot; title=&quot;禹州实训-宠物医院(后端)&quot;&gt;&lt;/a&gt;禹州实训-宠物医院(后端)&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;今年实训项目是一个只有增删改查的管理系统，没啥难度，后端基本都是体力活，所以&lt;code&gt;SpringBoot&lt;/code&gt;加&lt;code&gt;Spring-data-jpa&lt;/code&gt;写这个最爽了，前端打算使用&lt;code&gt;Angular&lt;/code&gt;和&lt;code&gt;Angular Material&lt;/code&gt;构建一下(不想用jsp那种破烂了)，前端东西有点多，所以分开记录。so，这就是一个前后端分离的项目了，后端目前就只有一个写接口的任务。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="禹州实训" scheme="http://yoursite.com/categories/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD/"/>
+    
+    
+      <category term="禹州实训" scheme="http://yoursite.com/tags/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用Docker部署静态网页</title>
     <link href="http://yoursite.com/2019/04/28/%E4%BD%BF%E7%94%A8docker%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/"/>
     <id>http://yoursite.com/2019/04/28/使用docker部署静态网页/</id>
     <published>2019-04-28T07:50:46.000Z</published>
-    <updated>2019-04-29T13:54:19.855Z</updated>
+    <updated>2019-06-12T14:16:36.904Z</updated>
     
     <summary type="html">
     
