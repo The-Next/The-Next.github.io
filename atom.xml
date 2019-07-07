@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-18T14:16:12.649Z</updated>
+  <updated>2019-07-07T07:46:45.179Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,18 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>禹州实训-宠物医院-前端</title>
-    <link href="http://yoursite.com/2019/06/08/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD-%E5%AE%A0%E7%89%A9%E5%8C%BB%E9%99%A2-%E5%89%8D%E7%AB%AF/"/>
-    <id>http://yoursite.com/2019/06/08/禹州实训-宠物医院-前端/</id>
-    <published>2019-06-08T04:42:38.000Z</published>
-    <updated>2019-06-18T14:16:12.649Z</updated>
+    <title>排序算法</title>
+    <link href="http://yoursite.com/2019/06/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/06/18/排序算法/</id>
+    <published>2019-06-18T14:21:33.000Z</published>
+    <updated>2019-07-07T07:46:45.179Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;禹州实训-宠物医院-前端&quot;&gt;&lt;a href=&quot;#禹州实训-宠物医院-前端&quot; class=&quot;headerlink&quot; title=&quot;禹州实训-宠物医院(前端)&quot;&gt;&lt;/a&gt;禹州实训-宠物医院(前端)&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;讲真，我对前端还是比较抵触的，因为我觉得这事是需要专业的人来做的(我们一点都不专业，前端课都是水课)。用户体验，界面设计，效果啥的，本来我就没审美……还想让我咋地！再说了，前端开发，目的是将用户体验提高到100分，但是这玩意给我的开发体验简直就是0分，没法让我感到”写得爽“。直到有一天我遇见了&lt;code&gt;Angular&lt;/code&gt;，我靠前端还能这么开发？Service?依赖注入？MVC？这不是&lt;code&gt;spring&lt;/code&gt;吗？还有typescript什么鬼，比原来那个辣鸡js好用多了，一看还是巨硬出得，巨硬终于干点人事了。&lt;/p&gt;
+      &lt;h1 id=&quot;排序算法&quot;&gt;&lt;a href=&quot;#排序算法&quot; class=&quot;headerlink&quot; title=&quot;排序算法&quot;&gt;&lt;/a&gt;排序算法&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;输入：一个n个数的序列 a&lt;sub&gt;1&lt;/sub&gt;，a&lt;sub&gt;2&lt;/sub&gt;……a&lt;sub&gt;n&lt;/sub&gt;&lt;br&gt;输出输入序列的一个排列a&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;‘&lt;/sup&gt;，a&lt;sub&gt;2&lt;/sub&gt;&lt;sup&gt;‘&lt;/sup&gt;……&lt;sub&gt;n&lt;/sub&gt;&lt;sup&gt;‘&lt;/sup&gt;，使得a&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;‘&lt;/sup&gt;&amp;lt;=a&lt;sub&gt;2&lt;/sub&gt;&lt;sup&gt;‘&lt;/sup&gt;&amp;lt;=……&amp;lt;=a&lt;sub&gt;n&lt;/sub&gt;&lt;sup&gt;‘&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;简而言之，排序就是将一组对象按照某一种逻辑顺序重新排列的过程，这是一个很古老的算法，同时在各个领域都起到了非常重要的作用，所以在这里对排序算法做一次总结。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
+      <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -37,11 +44,11 @@
     <link href="http://yoursite.com/2019/05/22/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD-%E5%AE%A0%E7%89%A9%E5%8C%BB%E9%99%A2-%E5%90%8E%E7%AB%AF/"/>
     <id>http://yoursite.com/2019/05/22/禹州实训-宠物医院-后端/</id>
     <published>2019-05-22T08:06:34.000Z</published>
-    <updated>2019-06-18T14:14:48.153Z</updated>
+    <updated>2019-07-06T03:01:19.053Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;禹州实训-宠物医院-后端&quot;&gt;&lt;a href=&quot;#禹州实训-宠物医院-后端&quot; class=&quot;headerlink&quot; title=&quot;禹州实训-宠物医院(后端)&quot;&gt;&lt;/a&gt;禹州实训-宠物医院(后端)&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;今年实训项目是一个只有增删改查的管理系统，没啥难度，后端基本都是体力活，所以&lt;code&gt;SpringBoot&lt;/code&gt;加&lt;code&gt;Spring-data-jpa&lt;/code&gt;写这个最爽了，前端打算使用&lt;code&gt;Angular&lt;/code&gt;和&lt;code&gt;Angular Material&lt;/code&gt;构建一下(不想用jsp那种破烂了)，前端东西有点多，所以分开记录。so，这就是一个前后端分离的项目了，后端目前就只有一个写接口的任务。&lt;/p&gt;
+      &lt;h1 id=&quot;禹州实训-宠物医院-后端&quot;&gt;&lt;a href=&quot;#禹州实训-宠物医院-后端&quot; class=&quot;headerlink&quot; title=&quot;禹州实训-宠物医院(后端)&quot;&gt;&lt;/a&gt;禹州实训-宠物医院(后端)&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;今年实训项目是一个只有增删改查的管理系统，没啥难度，后端基本都是体力活，所以&lt;code&gt;SpringBoot&lt;/code&gt;加&lt;code&gt;Spring-data-jpa&lt;/code&gt;写这个最爽了，前端打算使用&lt;code&gt;Angular&lt;/code&gt;和&lt;code&gt;Angular Material&lt;/code&gt;构建一下(不想用jsp那种破烂了)，前端东西有点多，所以分开记录(前端太无聊，鸽了)。so，这就是一个前后端分离的项目了，后端目前就只有一个写接口的任务。&lt;/p&gt;
     
     </summary>
     
