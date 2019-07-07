@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/18/排序算法/0028FBA6A4AF91D657B4EC7DE07C2E7D.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/18/排序算法/11259EDCC2874623F242CCA82C454AC6.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/18/排序算法/BB8A0FE6AA7E3AED33492A0F234693B5.png">
-<meta property="og:updated_time" content="2019-07-07T07:46:45.179Z">
+<meta property="og:updated_time" content="2019-07-07T07:58:03.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法">
 <meta name="twitter:description" content="排序算法 输入：一个n个数的序列 a1，a2……an输出输入序列的一个排列a1‘，a2‘……n‘，使得a1‘&amp;lt;=a2‘&amp;lt;=……&amp;lt;=an‘  &amp;emsp;&amp;emsp;简而言之，排序就是将一组对象按照某一种逻辑顺序重新排列的过程，这是一个很古老的算法，同时在各个领域都起到了非常重要的作用，所以在这里对排序算法做一次总结。">
@@ -466,7 +466,85 @@
 <p>对于给定n个b位数的和任何正整数r&lt;=b，如果基数排序使用的稳定排序算法对数据取值区间是0到k到输入进行排序耗时$\Theta$(n+k)，那么他就可以在$\Theta$((b/r)(n+2<sup>r</sup>))将这些数排好序。</p>
 </blockquote>
 <p>&emsp;&emsp;证明就不写了，脑壳疼……<br>&emsp;&emsp;至于这个选择用不用，我觉得还是别用，它的运行实现可能看上去比其他排序好一些，但是在渐进记号后面的常数因子却大的多，并且他没有快速排序那样可以有效使用硬件缓存，而且他也不是原址排序。具体实现如下。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">基数排序</span></span><br><span class="line"><span class="comment">Input:</span></span><br><span class="line"><span class="comment">    数组A[l,h]；</span></span><br><span class="line"><span class="comment">    数组中最大元素的位数d，例如最大数为999，则d为3；</span></span><br><span class="line"><span class="comment">    进制数k，如果是10进制数，k为10；</span></span><br><span class="line"><span class="comment">Output:排序好的数组；</span></span><br><span class="line"><span class="comment">Others：对数字1234来说，预定第0位为4，第1位为3，依次类推；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">radixsort</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> l, <span class="keyword">int</span> h, <span class="keyword">int</span> d, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == A || l &gt; h)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> size = h - l + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span>* counts = <span class="keyword">new</span> <span class="keyword">int</span>[k];<span class="comment">//辅助数据	</span></span><br><span class="line">	<span class="keyword">int</span>* temp = <span class="keyword">new</span> <span class="keyword">int</span>[size];<span class="comment">//用于存储重新排序的数组</span></span><br><span class="line">	<span class="keyword">int</span> index;</span><br><span class="line">	<span class="keyword">int</span> pval = <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//依次处理不同的位</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; d; i++) &#123;</span><br><span class="line">		<span class="comment">//counts数组清零</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; j++)</span><br><span class="line">			counts[j] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = l; j &lt;= h; j++) &#123;</span><br><span class="line">			index = (<span class="keyword">int</span>)(A[j] / pval) % k;</span><br><span class="line">			counts[index]++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//计算累加频数</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; k; j++)</span><br><span class="line">			counts[j] = counts[j] + counts[j - <span class="number">1</span>];</span><br><span class="line">		<span class="comment">//使用倒数第i+1位数对A进行排序</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = h; j &gt;= l; j--) &#123;</span><br><span class="line">			index = (<span class="keyword">int</span>)(A[j] / pval) % k;</span><br><span class="line">			temp[counts[index] - <span class="number">1</span>] = A[j];</span><br><span class="line">			counts[index]--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//将按第i为数排序后的结果保存回数组A中</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; j++)</span><br><span class="line">			A[j + l] = temp[j];</span><br><span class="line">		<span class="comment">//更新pval</span></span><br><span class="line">		pval = pval * k;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">delete</span>[] counts;</span><br><span class="line">	<span class="keyword">delete</span>[] temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="算法比较"><a href="#算法比较" class="headerlink" title="算法比较"></a>算法比较</h2><p>&emsp;&emsp;这八种排序算法具体该选择哪一种，很大程度上取决于实际应用场景。下面用一张表来总结以上九种（快速排序分为普通的和三向切分的）排序算法。<br>算法|是否稳定|是否为原址排序|时间复杂度|空间复杂度|备注<br>– |:–:|–:|–:|–:|–:<br>选择排序|否|是|N<sup>2</sup>|1|<br>插入排序|是|是|介于N和N<sup>2</sup>之间|1|与元素初始状态有关<br>希尔排序|否|是|近似于NlgN和N<sup>6/5</sup>|1|目前没有证出来<br>快速排序|否|是|NlgN|lgN|有大概率取得最好运行状态<br>三向切分快速排序|否|是|介于N和NlgN之间|lgN|同时取决于概率和元素分布<br>归并排序|是|否|NlgN|N<br>堆排序|否|是|NlgN|1<br>基数排序|是|否|d(N+k)|(N+k)|受隐藏常数因子影响太大</p>
+<h2 id="算法比较"><a href="#算法比较" class="headerlink" title="算法比较"></a>算法比较</h2><p>&emsp;&emsp;这八种排序算法具体该选择哪一种，很大程度上取决于实际应用场景。下面用一张表来总结以上九种（快速排序分为普通的和三向切分的）排序算法。</p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th style="text-align:center">是否稳定</th>
+<th style="text-align:right">是否为原址排序</th>
+<th style="text-align:right">时间复杂度</th>
+<th style="text-align:right">空间复杂度</th>
+<th style="text-align:right">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>选择排序</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">N<sup>2</sup></td>
+<td style="text-align:right">1</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">介于N和N<sup>2</sup>之间</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">与元素初始状态有关</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">近似于NlgN和N<sup>6/5</sup></td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">目前没有证出来</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">NlgN</td>
+<td style="text-align:right">lgN</td>
+<td style="text-align:right">有大概率取得最好运行状态</td>
+</tr>
+<tr>
+<td>三向切分快速排序</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">介于N和NlgN之间</td>
+<td style="text-align:right">lgN</td>
+<td style="text-align:right">同时取决于概率和元素分布</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">NlgN</td>
+<td style="text-align:right">N</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">NlgN</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">d(N+k)</td>
+<td style="text-align:right">(N+k)</td>
+<td style="text-align:right">受隐藏常数因子影响太大</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
