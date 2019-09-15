@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="程佩的博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="单变量线性回归&amp;emsp;&amp;emsp;机器学习第一坑，跟着网易云课堂上吴恩达的机器学习课程学习，纯英文的，但是有字幕，语速什么的都非常不错。为这个课程写博客的目的只有一个，就是为了记录和总结，不然仅仅是听课的话，听完过一段就忘了，记录下来方面以后复习使用。">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习-单变量线性回归">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/index.html">
+<meta property="og:site_name" content="程佩的博客">
+<meta property="og:description" content="单变量线性回归&amp;emsp;&amp;emsp;机器学习第一坑，跟着网易云课堂上吴恩达的机器学习课程学习，纯英文的，但是有字幕，语速什么的都非常不错。为这个课程写博客的目的只有一个，就是为了记录和总结，不然仅仅是听课的话，听完过一段就忘了，记录下来方面以后复习使用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/DA4F5BB6-D0B5-4786-96A9-F3A16FFB8344.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/5187852A-CF51-4B23-9932-B82E8143ECBA.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/D70BFC45-C06D-4180-94F7-140BB5F57CA1.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/3754D7E6-049B-4858-8D54-ED4BA240A7A3.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/511F938D-B18A-4ED3-BAD2-CF96D66BC7AF.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/380D0FF8-D063-4E0E-92EE-3A189A8FF3A7.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/D933343A-A804-4EE6-B5DA-C11D2D5E1858.png">
+<meta property="og:updated_time" content="2019-07-16T08:04:41.280Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习-单变量线性回归">
+<meta name="twitter:description" content="单变量线性回归&amp;emsp;&amp;emsp;机器学习第一坑，跟着网易云课堂上吴恩达的机器学习课程学习，纯英文的，但是有字幕，语速什么的都非常不错。为这个课程写博客的目的只有一个，就是为了记录和总结，不然仅仅是听课的话，听完过一段就忘了，记录下来方面以后复习使用。">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/DA4F5BB6-D0B5-4786-96A9-F3A16FFB8344.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/">
+
+
+
+
+
+  <title>机器学习-单变量线性回归 | 程佩的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">程佩的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">没有银弹</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-rchives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            rchives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/机器学习-单变量线性回归/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="程佩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/timg.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程佩的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习-单变量线性回归</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T13:24:58+08:00">
+                2019-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+          
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="单变量线性回归"><a href="#单变量线性回归" class="headerlink" title="单变量线性回归"></a>单变量线性回归</h1><p>&emsp;&emsp;机器学习第一坑，跟着网易云课堂上吴恩达的机器学习课程学习，纯英文的，但是有字幕，语速什么的都非常不错。为这个课程写博客的目的只有一个，就是为了记录和总结，不然仅仅是听课的话，听完过一段就忘了，记录下来方面以后复习使用。</p>
+<a id="more"></a>
+<h2 id="模型描述"><a href="#模型描述" class="headerlink" title="模型描述"></a>模型描述</h2><p>&emsp;&emsp;属于监督模型，在一个模型中，我们有数据集。比如说我们要买房子，我们有大量的房价信息，他们都有两个属性，一个是价格，一个是面积，我们可以根据这两个属性建立一个二维坐标，将我们的数据集放在上面，我们可以使用一条直线大致模拟这些数据的走向，这既是一个模型，根据这个模型，我们就可以根据房子的大小来预测房价。这就是一个很简单的监督学习模型。之所以叫监督学习，是因为对于每一个例子，他都会有一个“确定的答案”。而这个问题也是一个回归的问题，回归就是我们预测一个值的具体输出。另一种监督学习叫做分类，它是用来预测一个值的离散输出。<br>&emsp;&emsp;在监督学习中，我们会有一个数据集，叫做训练集，接下来定义一些使用的符号。<br><img src="/2019/07/15/机器学习-单变量线性回归/DA4F5BB6-D0B5-4786-96A9-F3A16FFB8344.png" alt=""></p>
+<blockquote>
+<p>m:  训练样本数量。<br>x: 输入量（输入特征）<br>y: 输出量（预测的目标变量）<br>（x<sup>(i)</sup>,y<sup>(i)</sup>），这里面的i表示的是坐标，而不是幂。</p>
+</blockquote>
+<p>&emsp;&emsp;监督学习算法大致流程是这样的，我们首先提供一个数训练集给学习算法，学习算法会输出一个函数“h”，称为“假设函数”。 向这个函数输入一个x值，这个函数会输出一个预测的y值，其实就是一个正常的函数。针对这个函数我们有一个通式。</p>
+<blockquote>
+<p>h<sub>$\theta$</sub>(x) = $\theta$_0 + $\theta$_1x</p>
+</blockquote>
+<p>&emsp;&emsp;下面的所有东西都是围绕这一个方程式展开。</p>
+<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>&emsp;&emsp;我们需要求得一组$\theta$_0和$\theta$_1，使得函数与真实情况最符合。我们将这两个$\theta$值称为模型参数。我们要做的就是选择模型参数，在这个模型参数所选择的直线上，h(x)与y的值需要取得最小。</p>
+<blockquote>
+<p>min_size =$\frac{1}{2m}$ $\sum_{i=1}^{m}$(h(x)-y)<sup>2</sup></p>
+</blockquote>
+<p>&emsp;&emsp;这里的h(x)就是上面列出来的通式。我们需要找到一对$\theta$_0和$\theta$_1使得这个表达式的值最小。这个函数就是这个线性回归的整体目标函数，我们用J($\theta$_0,$\theta$_1)来表示上面这个函数，称之为<strong>代价函数</strong>，也被称作代价误差函数或者平方误差代价函数。</p>
+<blockquote>
+<p>J($\theta$_0,$\theta$_1)=$\frac{1}{2m}$ $\sum_{i=1}^{m}$(h(x)-y)<sup>2</sup></p>
+</blockquote>
+<p>&emsp;&emsp;从公式中可以看出，J($\theta$_0,$\theta$_1)是一个二次函数，想要它的最小值，就要取得它的最低点。<br><img src="/2019/07/15/机器学习-单变量线性回归/5187852A-CF51-4B23-9932-B82E8143ECBA.png" alt=""></p>
+<p>&emsp;&emsp;实际上，决定我们代价函数的值有$\theta$_0和$\theta$_1两个，所以我们的函数应该是三维的碗状函数，同样的，我们所需要的还是要求得J($\theta$_0,$\theta$_1)的最小值。<br><img src="/2019/07/15/机器学习-单变量线性回归/D70BFC45-C06D-4180-94F7-140BB5F57CA1.png" alt=""></p>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><p>&emsp;&emsp;这个算法被广泛的应用于机器学习的各个领域，后面好多地方也会用到。算法的思想是先给定$\theta$_0和$\theta$_1的初始值（一般都是0）。接下来我们需要使$\theta$_0和$\theta$_1一点点的改变，来使J($\theta$_0,$\theta$_1)的值变小，直到找到一个最小值或者局部最小值。整个过程就如同在下山一样，如图所示，事实上如果出发点不同的话，我们得到的局部最优解也不一样。<br><img src="/2019/07/15/机器学习-单变量线性回归/3754D7E6-049B-4858-8D54-ED4BA240A7A3.png" alt=""></p>
+<blockquote>
+<p>梯度下降算法定义：<br>repeat until convergence{//反复操作，直到收敛<br>    $\theta$<sub>j</sub> := $\theta$<sub>j</sub> - $\alpha$$\frac{\partial}{\partial \theta j}$J($\theta$_0,$\theta$_1)&emsp;&emsp;(j = 0,j = 1)<br>}<br>在这里，:=是赋值，=是等于</p>
+<p>temp0 := $\theta$<sub>0</sub> - $\alpha$$\frac{\partial}{\partial \theta 0}$J($\theta$_0,$\theta$_1)<br>temp1 := $\theta$<sub>1</sub> - $\alpha$$\frac{\partial}{\partial \theta 1}$J($\theta$_0,$\theta$_1)<br>$\theta$<sub>0</sub> = temp0<br>$\theta$<sub>1</sub> = temp1<br>这么做的原因是让数据同步，因为两个数的计算同时需要$\theta$_0和$\theta$_1，如果第一个数直接改变的话，第二个数计算的时候用的就不是原来的值了。</p>
+</blockquote>
+<p>&emsp;&emsp;下面来分析一下这个公式，公式中的$\alpha$被称作<strong>学习速率</strong>，它决定了$\theta$_0和$\theta$_1的更新幅度。第二部分则是一个偏导数，我们可以以用一张图来看一下公式的运作过程，这里我们暂时将$\theta$_0设置为0，对$\theta$_1求偏导数，求得导数值是一个正的，说明是一个上坡，所以我们要向前移动，移动的距离就是$\alpha$，若果偏导数是一个负值，那么就向后移动，这就是导数项的意义。<br><img src="/2019/07/15/机器学习-单变量线性回归/511F938D-B18A-4ED3-BAD2-CF96D66BC7AF.png" alt=""><br>&emsp;&emsp;对于$\alpha$而言，上面也提到了他是学习速率，这个速率的大小影响着算法的速率，比如说如果$\alpha$很小，那么这个算法每次更新时只会移动一点点，最后会移动到终点，时间太长了。可是如果$\alpha$太大，那么在更新过程中，更新过程中可能造成的问题是无法收敛，也就是无法取到最低点，所以$\alpha$的取值很重要。<br><img src="/2019/07/15/机器学习-单变量线性回归/380D0FF8-D063-4E0E-92EE-3A189A8FF3A7.png" alt=""><br>&emsp;&emsp;我们有一种解决这个问题的办法，第一次我们更新时，可能幅度会很大，第二次更新时，我们的幅度会比第一次的小，随着算法的递进，越接近局部最低点时，更新幅度会越来越小，直到最低点，这样的话速度会快一些，而且能够保证收敛。<br><img src="/2019/07/15/机器学习-单变量线性回归/D933343A-A804-4EE6-B5DA-C11D2D5E1858.png" alt=""></p>
+<h2 id="线性回归的梯度下降算法"><a href="#线性回归的梯度下降算法" class="headerlink" title="线性回归的梯度下降算法"></a>线性回归的梯度下降算法</h2><p>&emsp;&emsp;首先回顾一下上面的函数。</p>
+<blockquote>
+<p>梯度下降算法：<br>repeat until convergence{<br>    $\theta$<sub>j</sub> := $\theta$<sub>j</sub> - $\alpha$ $\frac{\partial}{\partial \theta j}$ J($\theta$_0,$\theta$_1)&emsp;&emsp;(j = 0,j = 1)<br>}<br>线性假设：<br>h<sub>$\theta$</sub>(x) = $\theta$_0 + $\theta$_1x<br>平方差代价函数：<br>J($\theta$_0,$\theta$_1) = $\frac{1}{2m}$  $\sum_{i=1}^{m}$ (h(x)-y)<sup>2</sup></p>
+</blockquote>
+<p>&emsp;&emsp;首先我们要搞定偏导数,先展开代价函数。</p>
+<blockquote>
+<p>$\frac{\partial}{\partial \theta j}$ J($\theta$_0,$\theta$_1) = $\frac{\partial}{\partial \theta j}$ $\frac{1}{2m}$ $\sum_{i=1}^{m}$ (h(x<sup>(i)</sup>)-y<sup>(i)</sup>)<sup>2</sup><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= $\frac{\partial}{\partial \theta j}$ $\frac{1}{2m}$ $\sum_{i=1}^{m}$($\theta$_0 + $\theta$_1x<sup>(i)</sup>-y<sup>(i)</sup>)<sup>2</sup></p>
+</blockquote>
+<blockquote>
+<p>j = 0 : $\frac{\partial}{\partial \theta j}$J($\theta$_0,$\theta$_1) = $\frac{1}{m}$ $\sum_{i=1}^{m}$(h(x<sup>(i)</sup>)-y<sup>(i)</sup>)<br>j = 1 : $\frac{\partial}{\partial \theta j}$J($\theta$_0,$\theta$_1) = $\frac{1}{m}$ $\sum_{i=1}^{m}$(h(x<sup>(i)</sup>)-y<sup>(i)</sup>)x<sup>i</sup></p>
+</blockquote>
+<p>&emsp;&emsp;由此我们可以得到我们的线性回归算法。</p>
+<blockquote>
+<p>repeat until algorithm{<br>    $\theta$<sub>0</sub> := $\theta$<sub>0</sub> - $\alpha$$\frac{1}{m}$ $\sum_{i=1}^{m}$(h(x<sup>(i)</sup>)-y<sup>(i)</sup>)<br>    $\theta$<sub>1</sub> := $\theta$<sub>1</sub> - $\alpha$$\frac{1}{m}$ $\sum_{i=1}^{m}$(h(x<sup>(i)</sup>)-y<sup>(i)</sup>)x<sup>i</sup><br>}</p>
+</blockquote>
+<p>&emsp;&emsp;这就是我所学习的第一个机器学习算法，<strong>线性回归的梯度下降算法</strong>，也叫<strong>Batch梯度下降算法</strong>。在线性代数中，还有一种算法可以求解代价函数的最小值而不需要去使用这种迭代算法，但是通常在大数据情况下，我们还是用梯度下降算法来解决这个问题。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/18/排序算法/" rel="next" title="排序算法">
+                <i class="fa fa-chevron-left"></i> 排序算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/22/机器学习-多变量线性回归/" rel="prev" title="机器学习-多变量线性回归">
+                机器学习-多变量线性回归 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/timg.jpeg" alt="程佩">
+            
+              <p class="site-author-name" itemprop="name">程佩</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单变量线性回归"><span class="nav-text">单变量线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型描述"><span class="nav-text">模型描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数"><span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归的梯度下降算法"><span class="nav-text">线性回归的梯度下降算法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">程佩</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+<!--社会主义核心价值观-->
+<script type="text/javascript" src="/js/src/click.js"></script>

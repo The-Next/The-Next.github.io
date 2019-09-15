@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-07T07:58:03.026Z</updated>
+  <updated>2019-09-11T14:21:07.606Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,89 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习-正则化</title>
+    <link href="http://yoursite.com/2019/09/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%AD%A3%E5%88%99%E5%8C%96/"/>
+    <id>http://yoursite.com/2019/09/11/机器学习-正则化/</id>
+    <published>2019-09-11T12:32:32.000Z</published>
+    <updated>2019-09-11T14:21:07.606Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;正则化&quot;&gt;&lt;a href=&quot;#正则化&quot; class=&quot;headerlink&quot; title=&quot;正则化&quot;&gt;&lt;/a&gt;正则化&lt;/h1&gt;&lt;h2 id=&quot;过拟合问题&quot;&gt;&lt;a href=&quot;#过拟合问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习-Logistic回归</title>
+    <link href="http://yoursite.com/2019/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-Logistic%E5%9B%9E%E5%BD%92/"/>
+    <id>http://yoursite.com/2019/07/24/机器学习-Logistic回归/</id>
+    <published>2019-07-24T01:07:24.000Z</published>
+    <updated>2019-09-11T12:51:46.499Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Logistic回归&quot;&gt;&lt;a href=&quot;#Logistic回归&quot; class=&quot;headerlink&quot; title=&quot;Logistic回归&quot;&gt;&lt;/a&gt;Logistic回归&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;虽然这个算法叫做&lt;strong&gt;Logistic回归&lt;/strong&gt;，但是他却是一个分类算法。分类算法通常是离散的，它通常只有两个值，0或1，也叫负类或者正类，也有更多的分类，但是这里只考虑两种情况的分类。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习-多变量线性回归</title>
+    <link href="http://yoursite.com/2019/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A4%9A%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
+    <id>http://yoursite.com/2019/07/22/机器学习-多变量线性回归/</id>
+    <published>2019-07-22T07:05:20.000Z</published>
+    <updated>2019-09-11T12:51:43.848Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;多变量线性回归&quot;&gt;&lt;a href=&quot;#多变量线性回归&quot; class=&quot;headerlink&quot; title=&quot;多变量线性回归&quot;&gt;&lt;/a&gt;多变量线性回归&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;在学过了一元线性回归之后，再来看一下另外一种可以适用于多个变量的模型————多元线性回归。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习-单变量线性回归</title>
+    <link href="http://yoursite.com/2019/07/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
+    <id>http://yoursite.com/2019/07/15/机器学习-单变量线性回归/</id>
+    <published>2019-07-15T05:24:58.000Z</published>
+    <updated>2019-07-16T08:04:41.280Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;单变量线性回归&quot;&gt;&lt;a href=&quot;#单变量线性回归&quot; class=&quot;headerlink&quot; title=&quot;单变量线性回归&quot;&gt;&lt;/a&gt;单变量线性回归&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;机器学习第一坑，跟着网易云课堂上吴恩达的机器学习课程学习，纯英文的，但是有字幕，语速什么的都非常不错。为这个课程写博客的目的只有一个，就是为了记录和总结，不然仅仅是听课的话，听完过一段就忘了，记录下来方面以后复习使用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>排序算法</title>
     <link href="http://yoursite.com/2019/06/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2019/06/18/排序算法/</id>
     <published>2019-06-18T14:21:33.000Z</published>
-    <updated>2019-07-07T07:58:03.026Z</updated>
+    <updated>2019-07-15T05:23:16.134Z</updated>
     
     <summary type="html">
     
