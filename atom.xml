@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-11T14:21:07.606Z</updated>
+  <updated>2019-09-22T12:23:20.655Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,21 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习-神经网络学习</title>
+    <link href="http://yoursite.com/2019/09/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2019/09/20/机器学习-神经网络学习/</id>
+    <published>2019-09-20T07:37:32.000Z</published>
+    <updated>2019-09-22T12:23:20.655Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;神经网络学习&quot;&gt;&lt;a href=&quot;#神经网络学习&quot; class=&quot;headerlink&quot; title=&quot;神经网络学习&quot;&gt;&lt;/a&gt;神经网络学习&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;在学习神经网络之前，这个名词经常在各种场合被提起，我对他的认知也只限于直到他跟大脑有关，至于有什么关系我还真不清楚，这一部分我也是花了不少时间去理解，从神经元结构开始，到最简单到一个模型，初步明白了它的概念以及他所解决的在线性回归和逻辑回归中的痛点。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习-正则化</title>
     <link href="http://yoursite.com/2019/09/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%AD%A3%E5%88%99%E5%8C%96/"/>
     <id>http://yoursite.com/2019/09/11/机器学习-正则化/</id>
     <published>2019-09-11T12:32:32.000Z</published>
-    <updated>2019-09-11T14:21:07.606Z</updated>
+    <updated>2019-09-18T06:21:37.525Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;正则化&quot;&gt;&lt;a href=&quot;#正则化&quot; class=&quot;headerlink&quot; title=&quot;正则化&quot;&gt;&lt;/a&gt;正则化&lt;/h1&gt;&lt;h2 id=&quot;过拟合问题&quot;&gt;&lt;a href=&quot;#过拟合问题&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;正则化&quot;&gt;&lt;a href=&quot;#正则化&quot; class=&quot;headerlink&quot; title=&quot;正则化&quot;&gt;&lt;/a&gt;正则化&lt;/h1&gt;&lt;h2 id=&quot;过拟合问题&quot;&gt;&lt;a href=&quot;#过拟合问题&quot; class=&quot;headerlink&quot; title=&quot;过拟合问题&quot;&gt;&lt;/a&gt;过拟合问题&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;在我们进行线性拟合的过程中，有时候可能拟合的效果比较差，比如说用一个一次函数去拟合一如下图所示的样本，那么我们可以看出该算法并没有很好的拟合训练集，我们将它称之为“欠拟合”，也说他是“高偏差”。&lt;/p&gt;
     
     </summary>
     
