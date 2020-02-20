@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="程佩的博客">
 <meta property="og:description" content="递归分治&amp;emsp;&amp;emsp;在之前的归并排序中，使用了递归分治的方法，整个算法经历了三个过程。&amp;emsp;&amp;emsp;分解：将原问题划分为一个个子问题，子问题与原问题形式一样，只是规模更小。&amp;emsp;&amp;emsp;求解：递归的求出子问题。如果子问题规模足够小，停止递归，直接求解。&amp;emsp;&amp;emsp;合并：将子问题的解组合成原问题的解。&amp;emsp;&amp;emsp;当问题足够大时，需要递归求解，这">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-20T13:00:14.055Z">
+<meta property="og:updated_time" content="2020-02-20T13:04:23.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="递归分治">
 <meta name="twitter:description" content="递归分治&amp;emsp;&amp;emsp;在之前的归并排序中，使用了递归分治的方法，整个算法经历了三个过程。&amp;emsp;&amp;emsp;分解：将原问题划分为一个个子问题，子问题与原问题形式一样，只是规模更小。&amp;emsp;&amp;emsp;求解：递归的求出子问题。如果子问题规模足够小，停止递归，直接求解。&amp;emsp;&amp;emsp;合并：将子问题的解组合成原问题的解。&amp;emsp;&amp;emsp;当问题足够大时，需要递归求解，这">
@@ -411,7 +411,7 @@
 <blockquote>
 <p>T(n) = 9T(n/3)+n</p>
 </blockquote>
-<p>对于这个递归式，a = 9,b = 3,f(n) = n,所以n<sup>log<sub>b</sub><sup>a</sup></sup> = n<sup>log<sub>3</sub><sup>9</sup></sup> = $\Theta$(n<sup>2</sup>)。f(n) = O(n<sup>log<sub>3</sub><sup>9-$\epsilon$</sup></sup>)，其中$\epsilon$ = 1，适用于情况1，得到解T(n) = $\Theta$(n<sup>2</sup>)。情况2和情况3的解法与此类似。证明部分见《算法导论》。</p>
+<p>对于这个递归式，a = 9,b = 3,f(n) = n,所以n<sup>log<sub>b</sub><sup>a</sup></sup> = n<sup>log<sub>3</sub><sup>9</sup></sup> = $\Theta$(n<sup>2</sup>)。f(n) = O(n<sup>log<sub>3</sub><sup>9</sup>-$\epsilon$</sup>)，其中$\epsilon$ = 1，适用于情况1，得到解T(n) = $\Theta$(n<sup>2</sup>)。情况2和情况3的解法与此类似。证明部分见《算法导论》。</p>
 <h3 id="2-最大子数组问题"><a href="#2-最大子数组问题" class="headerlink" title="2. 最大子数组问题"></a>2. 最大子数组问题</h3><p>&emsp;&emsp;在一个数组中找出最大的非空连续子数组。</p>
 <h4 id="2-1-暴力破解"><a href="#2-1-暴力破解" class="headerlink" title="2.1 暴力破解"></a>2.1 暴力破解</h4><p>&emsp;&emsp;尝试对每一种情况进行组合，n个数中一共有C(n,2)种组合，C(n,2) = $\Theta$(n<sup>2</sup>)，每次操作至少也是个常量，所以这种方法的运行时间为Ω(n<sup>2</sup>).很显然，暴力破解代价有点大。<br>&emsp;&emsp;从另外一个角度来看看输入的数据。目的是找到一段数据，使其从开头到结尾的净变化值最大，所以现不看每次输入的数据，而是每次输入数据的变化值，定义第i个数的变化为第i个数与第i-1个数之差，将其看作数组A，问题就转化为数组A的和最大非空连续子数组，这样的连续子数组为<strong>最大子数组</strong>，乍一看对于一个n个数的串，我们还是需要检查C(n-1,2)=$\Theta$(n<sup>2</sup>)个子数组，重新组织计算方式，利用之前计算出的子数组和来计算当前子数组的和，使得每个子数组的和计算时间为O(1)，使暴力破解花费的时间为$\Theta$(n<sup>2</sup>)，代价还是有点大，我们需要将运行时间限制在o(n<sup>2</sup>)。</p>
 <h4 id="2-2-分治法"><a href="#2-2-分治法" class="headerlink" title="2.2 分治法"></a>2.2 分治法</h4><p>&emsp;&emsp;首先说明，只有当数组中包含负数时，最大子数组大问题才有意义，否则，最大子数组直接就是数组A。<br>&emsp;&emsp;假定我们寻找数组A的最大子数组，我们需要将数组划分为两个规模大致相同的两个子数组，也就是说找到中央位置，然后将其对半拆分，在数组A[low..high]中的任何子数组必定满足一下条件。</p>
