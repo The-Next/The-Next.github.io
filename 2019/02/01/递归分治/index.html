@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="程佩的博客">
 <meta property="og:description" content="递归分治&amp;emsp;&amp;emsp;在之前的归并排序中，使用了递归分治的方法，整个算法经历了三个过程。&amp;emsp;&amp;emsp;分解：将原问题划分为一个个子问题，子问题与原问题形式一样，只是规模更小。&amp;emsp;&amp;emsp;求解：递归的求出子问题。如果子问题规模足够小，停止递归，直接求解。&amp;emsp;&amp;emsp;合并：将子问题的解组合成原问题的解。&amp;emsp;&amp;emsp;当问题足够大时，需要递归求解，这">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-28T13:21:58.451Z">
+<meta property="og:updated_time" content="2020-02-20T13:00:14.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="递归分治">
 <meta name="twitter:description" content="递归分治&amp;emsp;&amp;emsp;在之前的归并排序中，使用了递归分治的方法，整个算法经历了三个过程。&amp;emsp;&amp;emsp;分解：将原问题划分为一个个子问题，子问题与原问题形式一样，只是规模更小。&amp;emsp;&amp;emsp;求解：递归的求出子问题。如果子问题规模足够小，停止递归，直接求解。&amp;emsp;&amp;emsp;合并：将子问题的解组合成原问题的解。&amp;emsp;&amp;emsp;当问题足够大时，需要递归求解，这">
@@ -401,7 +401,7 @@
 </blockquote>
 <p>其中a &gt;= 1、b &gt; 1且都是常数，f(n)是渐进正函数。这个公式描述了一个算法的运行时间：他将规模为n的问题分解为a个子问题，每个子问题规模为n/b，其中a和b都是正常数。a个子问题递归的求解，每个花费时间为T(n/b)。函数f(n)包含了问题分解和子问题解合并的代价。因为n/b不一定为整数，所以一般将T(n/b)替换为T($\lfloor$n/b$\rfloor$)或者T($\lceil$n/b$\rceil$)。，并不会影响渐进式性质。</p>
 <blockquote>
-<p>主定理：令a &gt;= 1和b &gt; 1是常数，f(n)是一个函数，T(n)是定义在非负整数上的递归式 T(n) = aT(n/b)+f(n)<br>其中将n/b解释为$\lfloor$n/b$\rfloor$或者$\lceil$n/b$\rceil$。T(n)有如下渐进界。<br>&emsp;&emsp;1.若某个常数$\epsilon$ &gt; 0 有f(n) = O(n<sup>log<sub>b</sub><sup>a-$\epsilon$</sup></sup>)，则T(n) = $\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>)<br>&emsp;&emsp;2.若f(n) = $\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>)，则T(n)=$\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>lgn)<br>&emsp;&emsp;3.若对某个常数$\epsilon$ &gt; 0有f(n) = Ω(n<sup>log<sub>b</sub><sup>a+$\epsilon$</sup></sup>)，且对某个常数c &lt; 1和所有足够大的n有af(n/b) &lt;= cf(n)，则T(n) = $\Theta$(f(n))。</p>
+<p>主定理：令a &gt;= 1和b &gt; 1是常数，f(n)是一个函数，T(n)是定义在非负整数上的递归式 T(n) = aT(n/b)+f(n)<br>其中将n/b解释为$\lfloor$n/b$\rfloor$或者$\lceil$n/b$\rceil$。T(n)有如下渐进界。<br>&emsp;&emsp;1.若某个常数$\epsilon$ &gt; 0 有f(n) = O(n<sup>log<sub>b</sub><sup>a</sup>-$\epsilon$</sup>)，则T(n) = $\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>)<br>&emsp;&emsp;2.若f(n) = $\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>)，则T(n)=$\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>lgn)<br>&emsp;&emsp;3.若对某个常数$\epsilon$ &gt; 0有f(n) = Ω(n<sup>log<sub>b</sub><sup>a</sup>+$\epsilon$</sup>)，且对某个常数c &lt; 1和所有足够大的n有af(n/b) &lt;= cf(n)，则T(n) = $\Theta$(f(n))。</p>
 </blockquote>
 <p>&emsp;&emsp;先来尝试理解一下主定理的含义，这三种情况都是将函数f(n)与函数n<sup>log<sub>b</sub><sup>a</sup></sup>比较。直觉上，两个函数的较大者决定了递归式的解。n<sup>log<sub>b</sub><sup>a</sup></sup>更大，就是情况1，解为T(n)=$\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>)。如果f(n)更大，就是情况3，解为T(n) = $\Theta$(f(n))。若两个函数相当，就是情况2，要再乘上一个对数因子解为T(n)=$\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>lgn)=$\Theta$(f(n)lgn)。<br>&emsp;&emsp;第一种情况下并不是f(n)小于$\Theta$(n<sup>log<sub>b</sub><sup>a</sup></sup>)就够了，而是要多项式的意义上小于。f(n)必须渐进的小于n<sup>log<sub>b</sub><sup>a</sup></sup>，要相差一个因子n<sup>$\epsilon$</sup>，$\epsilon$是大于0的常数。第三种情况与第一种相似，并且要满足“正则“条件af(n/b)&lt;=cf(n)。<br>&emsp;&emsp;这三种情况并未覆盖所有可能性，三种情况之间都有一定的缝隙，比如f(n)和n<sup>log<sub>b</sub><sup>a</sup></sup>并不是形式意义上的大于或小于关系，这种情况无法使用主定理。</p>
 <blockquote>
@@ -561,7 +561,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -643,7 +643,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

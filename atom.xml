@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-31T13:35:36.153Z</updated>
+  <updated>2019-11-14T13:39:27.056Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习-支持向量机</title>
+    <link href="http://yoursite.com/2019/11/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/"/>
+    <id>http://yoursite.com/2019/11/04/机器学习-支持向量机/</id>
+    <published>2019-11-04T11:28:11.000Z</published>
+    <updated>2019-11-14T13:39:27.056Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;支持向量机&quot;&gt;&lt;a href=&quot;#支持向量机&quot; class=&quot;headerlink&quot; title=&quot;支持向量机&quot;&gt;&lt;/a&gt;支持向量机&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;这里有一个非常强大的算法，它在工业和学术界应用的非常广泛，它叫做&lt;strong&gt;支持向量机&lt;/strong&gt;，与逻辑回归和神经网络相比，&lt;strong&gt;SVM&lt;/strong&gt;（支持向量机）可以在学习复杂的非线性方程时提供更强大和更清晰的方式。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习-神经网络参数的反向传播算法</title>
@@ -57,7 +75,7 @@
     <link href="http://yoursite.com/2019/09/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%AD%A3%E5%88%99%E5%8C%96/"/>
     <id>http://yoursite.com/2019/09/11/机器学习-正则化/</id>
     <published>2019-09-11T12:32:32.000Z</published>
-    <updated>2019-09-18T06:21:37.525Z</updated>
+    <updated>2019-11-05T13:38:08.632Z</updated>
     
     <summary type="html">
     
@@ -267,7 +285,7 @@
     <link href="http://yoursite.com/2019/02/01/%E9%80%92%E5%BD%92%E5%88%86%E6%B2%BB/"/>
     <id>http://yoursite.com/2019/02/01/递归分治/</id>
     <published>2019-02-01T04:04:06.000Z</published>
-    <updated>2019-03-28T13:21:58.451Z</updated>
+    <updated>2020-02-20T13:00:14.055Z</updated>
     
     <summary type="html">
     
@@ -298,9 +316,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -321,9 +339,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -396,28 +414,6 @@
     
     
       <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2019/01/17/hello-world/"/>
-    <id>http://yoursite.com/2019/01/17/hello-world/</id>
-    <published>2019-01-17T12:18:30.393Z</published>
-    <updated>2019-01-19T13:02:24.290Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;我的第一篇博客&quot;&gt;&lt;a href=&quot;#我的第一篇博客&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   

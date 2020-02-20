@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/11/机器学习-正则化/00CF49CAEE044F7C784751DA2A86DCBC.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/11/机器学习-正则化/A522B09D2A2B2FADA82CBCD4D4105034.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/11/机器学习-正则化/9E30F3E30C36BFB7C6410E0C44A361AC.png">
-<meta property="og:updated_time" content="2019-09-18T06:21:37.525Z">
+<meta property="og:updated_time" content="2019-11-05T13:38:08.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-正则化">
 <meta name="twitter:description" content="正则化过拟合问题&amp;emsp;&amp;emsp;在我们进行线性拟合的过程中，有时候可能拟合的效果比较差，比如说用一个一次函数去拟合一如下图所示的样本，那么我们可以看出该算法并没有很好的拟合训练集，我们将它称之为“欠拟合”，也说他是“高偏差”。">
@@ -416,6 +416,9 @@
 <p>$$<br>\theta = (X^TX + \lambda<br>\left[<br> \begin{matrix}<br>   0 &amp; 0 \\<br>   0 &amp; 1<br>  \end{matrix}<br>\right]<br>)^{-1}X^Ty$$</p>
 </blockquote>
 <p>&emsp;&emsp;在这里的矩阵其实是一个n阶矩阵，在此为了方便就写成了二阶矩阵，该矩阵的对角线除了左上角以外都为1，其余部分皆为0。用这个新的式子就可以得到J($\theta$)的全局最小值，证明就不再写了。</p>
+<blockquote>
+<p>十一月五日补充：<br>我忘写了，逻辑回归也是在公式后面加一个正则化项$\frac{\lambda}{2m}$$\sum_{i=1}^{n}$$\theta$<sub>j</sub><sup>2</sup>。</p>
+</blockquote>
 
       
     </div>
@@ -537,7 +540,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -619,7 +622,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
