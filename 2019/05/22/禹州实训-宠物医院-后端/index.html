@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="禹州实训,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="荒原曾是乐土的博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="禹州实训-宠物医院(后端)&amp;emsp;&amp;emsp;今年实训项目是一个只有增删改查的管理系统，没啥难度，后端基本都是体力活，所以SpringBoot加Spring-data-jpa写这个最爽了，前端打算使用Angular和Angular Material构建一下(不想用jsp那种破烂了)，前端东西有点多，所以分开记录(前端太无聊，鸽了)。so，这就是一个前后端分离的项目了，后端目前就只有一个写接口的">
+<meta name="keywords" content="禹州实训">
+<meta property="og:type" content="article">
+<meta property="og:title" content="禹州实训-宠物医院-后端">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/禹州实训-宠物医院-后端/index.html">
+<meta property="og:site_name" content="荒原曾是乐土的博客">
+<meta property="og:description" content="禹州实训-宠物医院(后端)&amp;emsp;&amp;emsp;今年实训项目是一个只有增删改查的管理系统，没啥难度，后端基本都是体力活，所以SpringBoot加Spring-data-jpa写这个最爽了，前端打算使用Angular和Angular Material构建一下(不想用jsp那种破烂了)，前端东西有点多，所以分开记录(前端太无聊，鸽了)。so，这就是一个前后端分离的项目了，后端目前就只有一个写接口的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/05/22/禹州实训-宠物医院-后端/D511A745-216A-4E23-A7B1-9EA82CDD6749.png">
+<meta property="og:updated_time" content="2019-07-06T03:01:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="禹州实训-宠物医院-后端">
+<meta name="twitter:description" content="禹州实训-宠物医院(后端)&amp;emsp;&amp;emsp;今年实训项目是一个只有增删改查的管理系统，没啥难度，后端基本都是体力活，所以SpringBoot加Spring-data-jpa写这个最爽了，前端打算使用Angular和Angular Material构建一下(不想用jsp那种破烂了)，前端东西有点多，所以分开记录(前端太无聊，鸽了)。so，这就是一个前后端分离的项目了，后端目前就只有一个写接口的">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/22/禹州实训-宠物医院-后端/D511A745-216A-4E23-A7B1-9EA82CDD6749.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/22/禹州实训-宠物医院-后端/">
+
+
+
+
+
+  <title>禹州实训-宠物医院-后端 | 荒原曾是乐土的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">荒原曾是乐土的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">没有银弹</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-rchives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            rchives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/禹州实训-宠物医院-后端/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="荒原曾是乐土">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/timg.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="荒原曾是乐土的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">禹州实训-宠物医院-后端</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T16:06:34+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/禹州实训/" itemprop="url" rel="index">
+                    <span itemprop="name">禹州实训</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+          
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="禹州实训-宠物医院-后端"><a href="#禹州实训-宠物医院-后端" class="headerlink" title="禹州实训-宠物医院(后端)"></a>禹州实训-宠物医院(后端)</h1><p>&emsp;&emsp;今年实训项目是一个只有增删改查的管理系统，没啥难度，后端基本都是体力活，所以<code>SpringBoot</code>加<code>Spring-data-jpa</code>写这个最爽了，前端打算使用<code>Angular</code>和<code>Angular Material</code>构建一下(不想用jsp那种破烂了)，前端东西有点多，所以分开记录(前端太无聊，鸽了)。so，这就是一个前后端分离的项目了，后端目前就只有一个写接口的任务。</p>
+<a id="more"></a>
+<h2 id="项目分析"><a href="#项目分析" class="headerlink" title="项目分析"></a>项目分析</h2><p>&emsp;&emsp;没啥好分析的，照着老师给的文档来吧。</p>
+<blockquote>
+<p>“爱心”宠物诊所的职员需要使用系统提供的如下功能：<br>浏览诊所的兽医以及他们的专业特长；<br>浏览宠物的主人（即诊所的客户）的相关信息；<br>更新宠物的主人的相关信息；<br>向系统中增加一个新客户；<br>浏览宠物的相关信息；<br>更新宠物的相关信息；<br>向系统中增加一个新宠物；<br>浏览宠物的访问历史记录；<br>向宠物的访问历史记录添加一次访问；<br>此外，诊所的职员在使用系统提供的上述功能之前需要进行登录。当职员不需要使用系统的上述功能时，也可退出系统。</p>
+</blockquote>
+<h2 id="数据库建立"><a href="#数据库建立" class="headerlink" title="数据库建立"></a>数据库建立</h2><p>&emsp;&emsp;根据提供的ER图，一共需要七张表，其中一张表独立，两张表有多对多关系，四张表相互之间有一对多或者多对一关系，但是经过考虑我决定两张具有多对多关系的表在数据库中依然保持其多对多关系，而另外四张需要外键连接的表在数据库中不再保持外键关系，所有外键都在<code>Service</code>层进行处理，具体关系如图所示。</p>
+<p><img src="/2019/05/22/禹州实训-宠物医院-后端/D511A745-216A-4E23-A7B1-9EA82CDD6749.png" alt="图"></p>
+<h2 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h2><p>&emsp;&emsp;<code>SpringBoot</code>怎么创建就不废话了，先说一下主要的依赖。由于不用写jsp，所有就不需要使用jsp的依赖，那么还剩下的依赖有。</p>
+<blockquote>
+<p>数据库驱动<br>数据源<br>SpringMVC<br>Spring-data-jpa</p>
+</blockquote>
+<p>这四个依赖就够了，所以<code>pox.xml</code>里面就写上<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.edu<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zzuli<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>zzuli<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Demo project for Spring Boot<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>11<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--springmvc--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--数据源--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--jpa--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- mysql --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;依赖写完之后，就开始写配置文件，配置文件还是使用<code>yaml</code>格式<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  jpa:</span></span><br><span class="line"><span class="attr">    database:</span> <span class="string">mysql</span></span><br><span class="line"><span class="attr">    properties:</span></span><br><span class="line"><span class="attr">      hibernate:</span></span><br><span class="line"><span class="attr">        hbm2ddl:</span></span><br><span class="line"><span class="attr">          auto:</span> <span class="string">update</span></span><br><span class="line"><span class="attr">        show_sql:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        format_sql:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>正常情况下配置文件里应该还有数据源配置，但是不知道为什么这一回写在配置文件中没有用了，所以单独写一个配置类<code>Config.java</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 11:04</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Config</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DruidDataSource <span class="title">druidDataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//Druid 数据源配置</span></span><br><span class="line">        DruidDataSource dataSource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">        dataSource.setDriverClassName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);</span><br><span class="line">        dataSource.setUrl(<span class="string">"jdbc:mysql://你的ip/pet?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"</span>);<span class="comment">//mysql8.0新写法</span></span><br><span class="line">        dataSource.setUsername(<span class="string">"root"</span>);</span><br><span class="line">        dataSource.setPassword(<span class="string">"123456”);</span></span><br><span class="line"><span class="string">        //初始连接数(默认值0)</span></span><br><span class="line"><span class="string">        dataSource.setInitialSize(8);</span></span><br><span class="line"><span class="string">        //</span></span><br></pre></td></tr></table></figure></p>
+<p>至此，所有项目需要的依赖和配置已经设置完毕。</p>
+<h2 id="Entity类设计"><a href="#Entity类设计" class="headerlink" title="Entity类设计"></a>Entity类设计</h2><p>&emsp;&emsp;这些类中包含了所有数据库需要的实体类，对应那七张表。本来这个包准备起名叫domain呢，很大程度上成了一个行业的约束，domain就代表了数据库映射。但是前几天看了一篇文章指出，在Java传统web开发中，通常我们写的所谓domain都是一些贫血模型，并没有领域模型的行为，所以这些类都只能是一个entity对象，并非领域对象，所以我把包名改成了entity。</p>
+<h4 id="Employ类"><a href="#Employ类" class="headerlink" title="Employ类"></a>Employ类</h4><p>&emsp;&emsp;这个类中包含员工信息，里面有一个主键自增长的id，一个名字，一个密码，下面是代码，get和set方法省略。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.domain;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 10:12</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"Employ"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employ</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span><span class="comment">//主键</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)<span class="comment">//自增长</span></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"password"</span>)</span><br><span class="line">    <span class="keyword">private</span>  String password;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"isactive"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer isactive;<span class="comment">//这个目前没用</span></span><br><span class="line">    <span class="comment">/*getter and setter*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;全部采用注解的方式，下面所有的表都是这样。</p>
+<h4 id="Specialties与Vets类设计"><a href="#Specialties与Vets类设计" class="headerlink" title="Specialties与Vets类设计"></a>Specialties与Vets类设计</h4><p>&emsp;&emsp;这两个类分别是特长类和兽医类，因为存在多对多关系，所以放在一起。其中兽医类维护两个实体类之间的关系。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.domain;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonIgnoreProperties;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 14:30</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"vets"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Vets</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@JsonIgnoreProperties</span>(value = <span class="string">"vetsList"</span>)</span><br><span class="line">    <span class="meta">@ManyToMany</span><span class="comment">//多对多映射</span></span><br><span class="line">    <span class="meta">@JoinTable</span>(name = <span class="string">"vets_specialties"</span>,joinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"vets_id"</span>),</span><br><span class="line">    inverseJoinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"specialties_id"</span>))<span class="comment">//外键关联</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Specialties&gt; specialtiesList;</span><br><span class="line">    <span class="comment">/*getter and setter*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;主要记录一下<code>@JsonIgnoreProperties(value = &quot;vetsList&quot;)</code>这一句，因为不加这一句的话，在多对多查询中，两个类中的成员变量都会有对方的列表，这样会造成无限循环查询，加上这一句是为了避免内层再次查询，相应的，特长类中也会有这一行注解，下面是特长类的代码。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.domain;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonIgnoreProperties;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 14:32</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"specialties"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Specialties</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@JsonIgnoreProperties</span>(value = <span class="string">"specialtiesList"</span>)</span><br><span class="line">    <span class="meta">@ManyToMany</span>(mappedBy = <span class="string">"specialtiesList"</span>)</span><br><span class="line">    <span class="keyword">private</span> List&lt;Vets&gt; vetsList;</span><br><span class="line">    <span class="comment">/*getter and setter*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Owner、Pet、Type、Visits类设计"><a href="#Owner、Pet、Type、Visits类设计" class="headerlink" title="Owner、Pet、Type、Visits类设计"></a>Owner、Pet、Type、Visits类设计</h4><p>&emsp;&emsp;这四张表分别对应主人信息、宠物信息、宠物类型、病历信息，因其存在外键关系，所以这四个表放一起讲。<br>&emsp;&emsp;Owner之中有主键、主人姓名、电话、家庭住址四个信息，所以实体类很简单。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.domain;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 11:18</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"owner"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Owner</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"address"</span>)</span><br><span class="line">    <span class="keyword">private</span> String address;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"telephone"</span>)</span><br><span class="line">    <span class="keyword">private</span> String telephone;</span><br><span class="line">    <span class="comment">/*getter and setter*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;Pet比较复杂，因为他跟两个表之间有这多对一关系，所以要记录关联信息，为了方便查询，我不止关联了主键信息，还关联了一些必要的名称信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.domain;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 11:40</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"pet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"brith_date"</span>)</span><br><span class="line">    <span class="keyword">private</span> String brithDate;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"type_id"</span>)<span class="comment">//与type关联</span></span><br><span class="line">    <span class="keyword">private</span> Integer typeId;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"type_name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String typeName;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"ownerId"</span>)<span class="comment">//与owner关联</span></span><br><span class="line">    <span class="keyword">private</span> Integer ownerId;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"owner_name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String ownerName;</span><br><span class="line">    <span class="comment">/*getter and setter*/</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;Type十分简单，除了主键之外只有一个name信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.domain;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 11:35</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"type"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Type</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">/*getter and setter*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;Visits和Pet之间存在多对一关系。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.domain;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.*;</span><br><span class="line"><span class="keyword">import</span> javax.xml.crypto.Data;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 14:22</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"visits"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Visits</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"visit_date"</span>)</span><br><span class="line">    <span class="keyword">private</span> String visitDate;</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"description"</span>)</span><br><span class="line">    <span class="keyword">private</span> String description;</span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"pet_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer petId;</span><br><span class="line">    <span class="comment">/*getter and setter*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目将一启动，这七个表就会被创建了。</p>
+<h2 id="JPA设计"><a href="#JPA设计" class="headerlink" title="JPA设计"></a>JPA设计</h2><p>&emsp;&emsp;JPA使用非常简单，只要继承<code>JpaRepository</code>接口就能使用一套已经写好的增删改查接口，但是自动生成可能无法满足自己的需求，所以需要在里面再加几个方法。(由于急着<del>玩游戏</del>学习，就不写基类JPA，反正就继承这一个接口，分页什么的扔前端了)</p>
+<h4 id="PetJPA"><a href="#PetJPA" class="headerlink" title="PetJPA"></a>PetJPA</h4><p>&emsp;&emsp;再这个接口中我想添加根据类型ID查询宠物接口、根据主人ID查询宠物接口，根据主人的ID更改所有属于该主人的宠物中的主人姓名的接口，在没有使用<code>QueryDSL</code>的时候，我觉得最好在接口中自己用<code>HQL</code>或者原生<code>SQL</code>编写接口、需要注意的是在修改和删除操作的时候要加上事务。修改操作的时候要加<code>@Modifying</code>注解。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.zzuli.jpa;</span><br><span class="line"><span class="keyword">import</span> cn.edu.zzuli.domain.Pet;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.Modifying;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.Query;</span><br><span class="line"><span class="keyword">import</span> javax.transaction.Transactional;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 14:47</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PetJPA</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">Pet</span>,<span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Query</span>(<span class="string">"select pet from Pet pet where pet.typeId = ?1"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Pet&gt; <span class="title">getPetByType</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">    <span class="meta">@Query</span>(<span class="string">"select pet from Pet pet where pet.ownerId = ?1"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Pet&gt; <span class="title">getPetByOwner</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="meta">@Modifying</span></span><br><span class="line">    <span class="meta">@Query</span>(<span class="string">"update Pet pet set pet.ownerName = ?1 where pet.ownerId = ?2"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePetByOwner</span><span class="params">(String name, Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面只写添加的方法，不再写整个接口了。</p>
+<h4 id="OwnerJPA"><a href="#OwnerJPA" class="headerlink" title="OwnerJPA"></a>OwnerJPA</h4><p>&emsp;&emsp;OwnerJPA只需要添加一个模糊查询接口。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(value = <span class="string">"select o from Owner o where o.name LIKE CONCAT('%',?1,'%') "</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Owner&gt; <span class="title">selectByNamelike</span><span class="params">(String name)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="EmployJPA"><a href="#EmployJPA" class="headerlink" title="EmployJPA"></a>EmployJPA</h4><p>&emsp;&emsp;EmployJPA里面只需要一个根据姓名查询，但是这里就不需要写查询语句了，jpa接口中是可以根据接口名称来自动实现接口，比如下面这个写法，就能自动解析为查询语句，不过只适用于简单查询，复杂查询写法太过繁琐。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Employ <span class="title">findByName</span><span class="params">(String name)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;SpecialtiesJPA和VetsJPA都有这个方法，就不重复写。</p>
+<h4 id="VisitsJPA"><a href="#VisitsJPA" class="headerlink" title="VisitsJPA"></a>VisitsJPA</h4><p>&emsp;&emsp;VisitsJPA里面需要一个根据宠物ID查询宠物信息的方法，如下所示。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"select v from Visits v where v.petId = ?1"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Visits&gt; <span class="title">getListByPet</span><span class="params">(Integer id)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;数据库操作已经编写完毕，接下来就是编写<code>Service</code>接口了。</p>
+<h2 id="Service接口设计"><a href="#Service接口设计" class="headerlink" title="Service接口设计"></a>Service接口设计</h2><p>&emsp;&emsp;关于Service层的设计也很简单，俗话说代码就是最好的注释，所以这里我并没有写太多注释，只放接口（从接口名完全可以看出来接口的功能），实现类放在github上。</p>
+<h4 id="EmployService"><a href="#EmployService" class="headerlink" title="EmployService"></a>EmployService</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 16:28</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">EmployService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Employ <span class="title">SearchEmploy</span><span class="params">(Employ employ)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">Verify</span><span class="params">(Employ employ)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Employ <span class="title">Logon</span><span class="params">(Employ employ)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="OwnerService"><a href="#OwnerService" class="headerlink" title="OwnerService"></a>OwnerService</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 18:30</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OwnerService</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> ArrayList&lt;Owner&gt; <span class="title">ownerList</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> ArrayList&lt;Owner&gt; <span class="title">searchByName</span><span class="params">(String name)</span></span>;<span class="comment">//模糊查询</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Optional&lt;Owner&gt; <span class="title">searchById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Owner <span class="title">addOwner</span><span class="params">(Owner owner)</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Owner <span class="title">updataOwner</span><span class="params">(Owner owner)</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Owner <span class="title">deleteOwner</span><span class="params">(Owner owner)</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteOwnerById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="PetService"><a href="#PetService" class="headerlink" title="PetService"></a>PetService</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 20:45</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PetService</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> Pet <span class="title">addPet</span><span class="params">(Pet pet)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deletePet</span><span class="params">(Integer id)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> Pet <span class="title">uptataPet</span><span class="params">(Pet pet)</span></span>;</span><br><span class="line"><span class="keyword">public</span> ArrayList&lt;Pet&gt;getPetList();</span><br><span class="line"><span class="function"><span class="keyword">public</span> Optional&lt;Pet&gt; <span class="title">getPetById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Pet&gt; <span class="title">getPetByType</span><span class="params">(Integer id)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Pet&gt; <span class="title">getPetByOwner</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="TypeService"><a href="#TypeService" class="headerlink" title="TypeService"></a>TypeService</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 20:19</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TypeService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Type <span class="title">add</span><span class="params">(Type type)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Type <span class="title">updata</span><span class="params">(Type type)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Type&gt; <span class="title">getlist</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Vets-SpService"><a href="#Vets-SpService" class="headerlink" title="Vets_SpService"></a>Vets_SpService</h4><p>&emsp;&emsp;这个接口要说明一下，因为<code>Specialties</code>与<code>Vets</code>两个表是多对多关系，操作时通常为关联查询，为了方便起见，就把他们两个的服务接口放在一起。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/15 11:02</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Vets_SpService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Vets&gt; <span class="title">getVetsList</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Specialties&gt; <span class="title">getSpecialtiesList</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(SPSet set)</span> <span class="keyword">throws</span> Exception</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Vets&gt; <span class="title">getVets</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Specialties&gt; <span class="title">getSpecialties</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="VisitsService"><a href="#VisitsService" class="headerlink" title="VisitsService"></a>VisitsService</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/15 9:22</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">VisitsService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Visits <span class="title">add</span><span class="params">(Visits visits)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Visits <span class="title">updata</span><span class="params">(Visits visits)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Visits&gt; <span class="title">getlist</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Visits&gt; <span class="title">getListByPet</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Visits&gt; <span class="title">getVisitById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h4><p>&emsp;&emsp;在上面的接口中，可以看见很多返回<code>Optional</code>的接口，因为<code>Spring-data-jpa</code>在进行单个对象查询的时候不会只返回对象，而是返回了一个<code>Optional</code>类，这是一个再jdk8中引入的很有趣的特性，它的存在就是为了解决令许多java程序员头疼的的空指针异常。本质上，这是一个包含有可选值的包装类，这意味着 Optional 类既可以含有对象也可以为空。可以说是java迈向函数式编程的很强劲的一步，不过在这里不是重点，不多说。</p>
+<h2 id="Controller层设计"><a href="#Controller层设计" class="headerlink" title="Controller层设计"></a>Controller层设计</h2><p>&emsp;&emsp;这一层是直接和前端进行交互的，比较重要。但是这个项目本身并没有什么东西，所以<code>Controller</code>层设计还是很简单的。</p>
+<h4 id="EmployController"><a href="#EmployController" class="headerlink" title="EmployController"></a>EmployController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 16:51</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/employ"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmployController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> EmployService employService;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@Author</span>:程佩</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@Description</span>:验证用户信息</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@Date</span>:2019/5/14_17:19</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"verify"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; Verify(<span class="meta">@RequestBody</span> Employ employ)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">boolean</span> flag = employService.Verify(employ);</span><br><span class="line">        <span class="keyword">if</span> (flag)&#123;</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"登陆成功！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"密码或账号不正确！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@Author</span>:程佩</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@Description</span>:注册账号</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@Date</span>:2019/5/14_17:23</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"logon"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; LogOn(<span class="meta">@RequestBody</span> Employ employ)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        Employ searchEmploy = employService.SearchEmploy(employ);</span><br><span class="line">        <span class="keyword">if</span> (searchEmploy == <span class="keyword">null</span>)&#123;</span><br><span class="line">            employService.Logon(employ);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"注册成功！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"账号已存在！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;说一下这个<code>ResponseEntity</code>，其实本来直接使用<code>HashMap</code>也行，因为做<code>post</code>提交这种非幂等操作，每次操作结果都不一样，反正返回一个状态让前端知道后面操作是个什么情况就行，但是我在浏览<code>Spring</code>文档的时候发现了这么一个类，仔细看了看才知道它可以返回一整个http响应，包含状态码、头部信息以及相应体内容，显然比只返回一个json串更合理，索性就用它了，具体怎么用在代码里体现的也有。<br>&emsp;&emsp;再说一下<code>@CrossOrigin</code>，这个注解可能在以前很少遇到，因为之前的jsp开发，静态资源和后端代码耦合比较严重，都放在一个服务器上。但是在前后端分离的情况下，由于不在一个服务器上，就会产生跨域问题，所谓跨域也就是浏览器对于同源策略（就是同一个域）的限制，浏览器会阻止服务器（域）之间的交流，协议、域名、端口其中之一不同就是跨域，一种解决办法就是使用nginx做反向代理，强行使两个服务器在同一个域中，但是这个有点麻烦（这个项目太小了，没有必要）。另一个方法就是<code>Spring</code>中给的<code>@CrossOrigin</code>注解，原理就是向请求中添加<code>Access-Control-Allow-Origin</code>等信息解决跨域问题。<br>&emsp;&emsp;下面的<code>Controller</code>类如果没有特别的地方就不再做详细说明，只贴代码，因为方法名已经把该接口的作用描述得够清楚类了，多写也无益。</p>
+<h4 id="OwnerController"><a href="#OwnerController" class="headerlink" title="OwnerController"></a>OwnerController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 19:06</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/owner"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OwnerController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> OwnerService ownerService;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getlist"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Owner&gt; <span class="title">getOwnerList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ownerService.ownerList();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getlistbyname"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Owner&gt; <span class="title">getOwnerListByName</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ownerService.searchByName(name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getbyid/&#123;id&#125;"</span> ,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Owner&gt; <span class="title">getOwnerById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ownerService.searchById(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"add"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; addOwner(<span class="meta">@RequestBody</span> Owner owner)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ownerService.addOwner(owner);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"updata"</span>,method = RequestMethod.PATCH)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; updateOwner(<span class="meta">@RequestBody</span> Owner owner)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ownerService.updataOwner(owner);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"delete"</span>,method = RequestMethod.DELETE)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; deleteOwner(<span class="meta">@RequestBody</span> Owner owner)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ownerService.deleteOwner(owner);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"deletebyid/&#123;id&#125;"</span>,method = RequestMethod.DELETE)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; deleteOwnerById(<span class="meta">@PathVariable</span>(<span class="string">"id"</span>) Integer id)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ownerService.deleteOwnerById(id);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="PetController"><a href="#PetController" class="headerlink" title="PetController"></a>PetController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/15 8:39</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/pet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PetController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> PetService petService;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"add"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; addPet(<span class="meta">@RequestBody</span> Pet pet)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            petService.addPet(pet);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"delete/&#123;id&#125;"</span>,method = RequestMethod.DELETE)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; deletePet(<span class="meta">@PathVariable</span>(<span class="string">"id"</span>) Integer id)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            petService.deletePet(id);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"updata"</span>,method = RequestMethod.PATCH)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; updataPet(<span class="meta">@RequestBody</span> Pet pet)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            petService.uptataPet(pet);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getlist"</span> ,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Pet&gt; <span class="title">getPetList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> petService.getPetList();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"get/&#123;id&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Pet&gt; <span class="title">getPetListById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> petService.getPetById(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getbyowner/&#123;id&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Pet&gt; <span class="title">getPetListByOwner</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer  id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> petService.getPetByOwner(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getbytype/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Pet&gt; <span class="title">getPetListByType</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> petService.getPetByType(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="TypeController"><a href="#TypeController" class="headerlink" title="TypeController"></a>TypeController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/14 20:29</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TypeController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> TypeService typeService;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/type"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; add(<span class="meta">@RequestBody</span> Type type)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            typeService.add(type);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/type/&#123;id&#125;"</span>,method = RequestMethod.DELETE)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; delete(<span class="meta">@PathVariable</span>(<span class="string">"id"</span>) Integer id)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            typeService.delete(id);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/type"</span>,method = RequestMethod.PATCH)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; updata(<span class="meta">@RequestBody</span> Type type)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            typeService.updata(type);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/type"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Type&gt; <span class="title">get</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> typeService.getlist();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;关于TypeController(宠物类型控制器)，我写了一个符合<code>rest</code>(表现层状态转换)规范的接口，通过一个统一的接口<code>/type</code>用来通讯，使用<code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>对资源进行交互。</p>
+<h4 id="Vets-SpController"><a href="#Vets-SpController" class="headerlink" title="Vets_SpController"></a>Vets_SpController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 程佩</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@datatime</span> 2019/5/15 11:39</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/vetsp"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Vets_SpController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Vets_SpService service;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getvetslist"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Vets&gt; <span class="title">getVetsList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> service.getVetsList();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getsplist"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Specialties&gt; <span class="title">getSpecialtiesList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> service.getSpecialtiesList();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getvetbyid/&#123;id&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Vets&gt; <span class="title">getVetsById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> service.getVets(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getspbyid/&#123;id&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Specialties&gt; <span class="title">getSpById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> service.getSpecialties(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/insert"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; insert(<span class="meta">@RequestBody</span> SPSet set)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(set.getVname()+<span class="string">" "</span>+set.getSname());</span><br><span class="line">            service.insert(set);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="VisitsController"><a href="#VisitsController" class="headerlink" title="VisitsController"></a>VisitsController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/visits"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VisitsController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> VisitsService visitsService;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/add"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; add(<span class="meta">@RequestBody</span> Visits visits)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            visitsService.add(visits);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"添加失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/delete/&#123;id&#125;"</span>,method = RequestMethod.DELETE)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; delete(<span class="meta">@PathVariable</span>(<span class="string">"id"</span>) Integer id)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            visitsService.delete(id);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"删除失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/updata"</span>,method = RequestMethod.PATCH)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String,Object&gt;&gt; updata(<span class="meta">@RequestBody</span> Visits visits)&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            visitsService.updata(visits);</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"1"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新成功!"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            map.put(<span class="string">"state"</span>,<span class="string">"0"</span>);</span><br><span class="line">            map.put(<span class="string">"message"</span>,<span class="string">"更新失败!"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt;(map, HttpStatus.OK);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/getlist"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Visits&gt; <span class="title">getlist</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> visitsService.getlist();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/getlistbypet/&#123;id&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Visits&gt; <span class="title">getlist</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> visitsService.getListByPet(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@CrossOrigin</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/getbyid/&#123;id&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Optional&lt;Visits&gt; <span class="title">getbyid</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> visitsService.getVisitById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>&emsp;&emsp;总体来说这就是一篇流水账……源代码开放在github上-&gt;<a href="https://github.com/The-Next/PetHospital" target="_blank" rel="noopener">地址</a>。还有，这回禹州的网没以前好，打星际还凑合。餐厅里唯一的一家杂炣没了，比较难受。银梅可乐挺好喝。没了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/禹州实训/" rel="tag"># 禹州实训</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/28/使用docker部署静态网页/" rel="next" title="使用Docker部署静态网页">
+                <i class="fa fa-chevron-left"></i> 使用Docker部署静态网页
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/18/排序算法/" rel="prev" title="排序算法">
+                排序算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/timg.jpeg" alt="荒原曾是乐土">
+            
+              <p class="site-author-name" itemprop="name">荒原曾是乐土</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#禹州实训-宠物医院-后端"><span class="nav-text">禹州实训-宠物医院(后端)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目分析"><span class="nav-text">项目分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库建立"><span class="nav-text">数据库建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目配置"><span class="nav-text">项目配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Entity类设计"><span class="nav-text">Entity类设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Employ类"><span class="nav-text">Employ类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Specialties与Vets类设计"><span class="nav-text">Specialties与Vets类设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Owner、Pet、Type、Visits类设计"><span class="nav-text">Owner、Pet、Type、Visits类设计</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JPA设计"><span class="nav-text">JPA设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PetJPA"><span class="nav-text">PetJPA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OwnerJPA"><span class="nav-text">OwnerJPA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EmployJPA"><span class="nav-text">EmployJPA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VisitsJPA"><span class="nav-text">VisitsJPA</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Service接口设计"><span class="nav-text">Service接口设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EmployService"><span class="nav-text">EmployService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OwnerService"><span class="nav-text">OwnerService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PetService"><span class="nav-text">PetService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypeService"><span class="nav-text">TypeService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vets-SpService"><span class="nav-text">Vets_SpService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VisitsService"><span class="nav-text">VisitsService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optional"><span class="nav-text">Optional</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller层设计"><span class="nav-text">Controller层设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EmployController"><span class="nav-text">EmployController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OwnerController"><span class="nav-text">OwnerController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PetController"><span class="nav-text">PetController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypeController"><span class="nav-text">TypeController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vets-SpController"><span class="nav-text">Vets_SpController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VisitsController"><span class="nav-text">VisitsController</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-text">结尾</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">荒原曾是乐土</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+<!--社会主义核心价值观-->
+<script type="text/javascript" src="/js/src/click.js"></script>
