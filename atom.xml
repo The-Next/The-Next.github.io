@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-05-22T03:53:02.932Z</updated>
+  <updated>2022-05-21T14:37:35.420Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>fairseq源码分析————task</title>
-    <link href="http://yoursite.com/2022/05/22/fairseq%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E2%80%94%E2%80%94task/"/>
-    <id>http://yoursite.com/2022/05/22/fairseq源码分析————task/</id>
-    <published>2022-05-22T02:59:29.000Z</published>
-    <updated>2022-05-22T03:53:02.932Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;task模块解析&quot;&gt;&lt;a href=&quot;#task模块解析&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>动态规划</title>
@@ -358,9 +336,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -381,9 +359,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -411,6 +389,28 @@
       <category term="SpringDataJPA" scheme="http://yoursite.com/tags/SpringDataJPA/"/>
     
       <category term="QueryDSL" scheme="http://yoursite.com/tags/QueryDSL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot-整合SpringDataJPA</title>
+    <link href="http://yoursite.com/2019/01/21/SpringBoot-%E6%95%B4%E5%90%88SpringDataJPA/"/>
+    <id>http://yoursite.com/2019/01/21/SpringBoot-整合SpringDataJPA/</id>
+    <published>2019-01-21T02:29:23.000Z</published>
+    <updated>2019-05-21T00:58:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;SpringBoot-整合SpringDataJPA&quot;&gt;&lt;a href=&quot;#SpringBoot-整合SpringDataJPA&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot-整合SpringDataJPA&quot;&gt;&lt;/a&gt;SpringBoot-整合SpringDataJPA&lt;/h1&gt;&lt;h3 id=&quot;1-简述&quot;&gt;&lt;a href=&quot;#1-简述&quot; class=&quot;headerlink&quot; title=&quot;1.简述&quot;&gt;&lt;/a&gt;1.简述&lt;/h3&gt;&lt;p&gt;&amp;emsp;&amp;emsp;SpringDataJPA是Spring Data的一个子项目，默认底层是Hibernate，使用基于JPA的Repository,极大的减少对数据库访问的代码量，仅仅使用内部接口就可以完成简单的crud操作。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://yoursite.com/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
+    
+      <category term="SpringDataJPA" scheme="http://yoursite.com/tags/SpringDataJPA/"/>
     
   </entry>
   
