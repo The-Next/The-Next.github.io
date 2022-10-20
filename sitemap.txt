@@ -1,3 +1,4 @@
+http://yoursite.com/2022/10/20/%E7%AB%AF%E5%88%B0%E7%AB%AF%E6%96%87%E6%9C%AC%E7%BF%BB%E8%AF%91%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95/
 http://yoursite.com/2019/04/28/%E4%BD%BF%E7%94%A8docker%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/
 http://yoursite.com/2019/07/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/
 http://yoursite.com/2020/03/31/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/
@@ -32,8 +33,10 @@ http://yoursite.com/tags/mongodb/
 http://yoursite.com/tags/%E7%AE%97%E6%B3%95/
 http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
 http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
+http://yoursite.com/tags/%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95/
 http://yoursite.com/tags/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD/
 http://yoursite.com/categories/SpringBoot/
 http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/
 http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/
+http://yoursite.com/categories/%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95/
 http://yoursite.com/categories/%E7%A6%B9%E5%B7%9E%E5%AE%9E%E8%AE%AD/
