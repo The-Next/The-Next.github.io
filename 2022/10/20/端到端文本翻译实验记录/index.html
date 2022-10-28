@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/2022/10/20/端到端文本翻译实验记录/result1.png">
 <meta property="og:image" content="http://yoursite.com/2022/10/20/端到端文本翻译实验记录/result2.png">
 <meta property="og:image" content="http://yoursite.com/2022/10/20/端到端文本翻译实验记录/255197.jpg">
-<meta property="og:updated_time" content="2022-10-28T11:57:59.719Z">
+<meta property="og:updated_time" content="2022-10-28T12:08:01.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="端到端文本翻译实验记录">
 <meta name="twitter:description" content="端到端文本翻译实验记录记录实验数据">
@@ -461,7 +461,25 @@
 <h3 id="v2-0"><a href="#v2-0" class="headerlink" title="v2.0"></a>v2.0</h3><h4 id="数据集改动："><a href="#数据集改动：" class="headerlink" title="数据集改动："></a>数据集改动：</h4><p><strong>United Nations Parallel Corpus</strong>：<br>一共15,595,948条数据，分割为训练集15784041条，验证集100000条，测试集2000条，英文部分经过sentence piece model进行分词处理，中文部分按照字进行分词。</p>
 <p>截取2,022,000条较短的数据(len &lt; 20)用作图片生成，其中训练集2000000条，验证集20000条，测试集2000条，文字在10-40pt之间随机设置，文字颜色为黑色，图片长度根据文字长度决定，与真实文本检测出来的图像框相同，更符合实际情况。在训练时使用padding图片进行统一处理统一填充为[480,680]大小，如果某一边界超出该大小，就先缩放，再padding，背景为随机背景。</p>
 <h4 id="模型改动"><a href="#模型改动" class="headerlink" title="模型改动"></a>模型改动</h4><p>未改动</p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p><strong>测试集测试</strong><br>测试|bleu<br>– |:–:<br>Transformer|49.99<br>OurModel|42.51</p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p><strong>测试集测试</strong></p>
+<table>
+<thead>
+<tr>
+<th>测试</th>
+<th style="text-align:center">bleu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transformer</td>
+<td style="text-align:center">49.99</td>
+</tr>
+<tr>
+<td>OurModel</td>
+<td style="text-align:center">42.51</td>
+</tr>
+</tbody>
+</table>
 <p><strong>真实测试</strong><br>测试用例：<br><img src="/2022/10/20/端到端文本翻译实验记录/test.png" alt="example"></p>
 <p>基于字的模型结果：<br><img src="/2022/10/20/端到端文本翻译实验记录/result1.png" alt="test1"></p>
 <p>基于词的模型结果：<br><img src="/2022/10/20/端到端文本翻译实验记录/result2.png" alt="test2"></p>
